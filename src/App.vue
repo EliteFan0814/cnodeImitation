@@ -2,7 +2,9 @@
   <div id="app">
     <header-comp/>
     <div class="main">
-      <router-view name='main'></router-view>
+      <router-view name="slidebar"></router-view>
+      <router-view name="main"></router-view>
+      
     </div>
     <!-- <router-view/> -->
   </div>
@@ -23,11 +25,16 @@ export default {
     margin: 0;
     padding: 0;
   }
+  .clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
   #app{
     background-color: #e1e1e1
   }
   .main{
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
 </style>

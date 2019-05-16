@@ -28,13 +28,17 @@
                     <router-link :to="{
                         name:'post_content',
                         params:{
-                            id:post.id
+                            id:post.id,
+                            name:post.author.loginname
                         }
                     }">
-                        <span>{{post.title}}</span>
+                        <span class="topic_title">{{post.title}}</span>
                     </router-link>
 
                     <span class="last_reply">{{post.last_reply_at | formatDate}}</span>
+                </li>
+                <li>
+                    <pagination @changeList="changeList"/>
                 </li>
             </ul>
         </div>
@@ -42,13 +46,18 @@
 </template>
 
 <script>
-export default {
+import pagination from './Pagination'
+export default { 
     name:'Postlist',
     data:function(){
         return {
             isLoading: false,
-            posts:[]
+            posts:[],
+            page:1
         }
+    },
+    components:{
+        pagination
     },
     beforeMount(){
         isLoading: true
@@ -57,8 +66,10 @@ export default {
     methods:{
         getData(){
             this.$http.get('https://cnodejs.org/api/v1/topics',{
-                page:1,
-                limit:10
+                params:{
+                    page:this.page,
+                    limit:20
+                }
             }).then(res=>{
                 this.isLoading = false
                 this.posts = res.data.data
@@ -66,6 +77,10 @@ export default {
             }).catch(err=>{
                 console.log(err)
             })
+        },
+        changeList(page){
+            this.page = page
+            this.getData()
         }
     }
 }
@@ -114,6 +129,34 @@ export default {
         color: #fff;
         padding: 3px 4px;
         border-radius: 3px;
+    }
+    .put_top,
+    .put_good{
+        background: #80bd01;
+        padding: 2px 4px;
+        color: #fff;
+        font-size: 12px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    a:visited{
+        color: #888;
+    }
+    .last_reply{
+        float: right;
+        color: #778087;
+        font-size: 12px;
+    }
+    .topiclist-tab{
+        background: #e5e5e5;
+        color: #999;
+        padding: 2px 4px;
+        font-size: 12px;
     }
 </style>
 
