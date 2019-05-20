@@ -3,7 +3,7 @@
         <div class="loading" v-if="isLoading">
             <img src="../assets/loading.gif">
         </div>
-        <div class="post">
+        <div class="post" v-else>
             <ul>
                 <li>
                     <div class="topbar">

@@ -1,10 +1,10 @@
 <template>
     <div class="pagination">
         <button @click="changeBtn">首页</button>
-        <button @click="changeBtn">上一页</button>
+        <button @click="changeBtn">&lt;&lt;</button>
         <button v-if="judge">......</button>
         <button :class="[{currentpage:currentpage === btn}]" @click="changeBtn(btn)" v-for="(btn,index) in pagebtns" :key="index">{{btn}}</button>
-        <button @click="changeBtn">下一页</button>
+        <button @click="changeBtn">&gt;&gt;</button>
     </div>
 </template>
 
@@ -23,12 +23,12 @@ export default {
         changeBtn(btn){
             if(typeof btn != 'number'){
                 switch(btn.target.innerText){
-                    case '上一页':
+                    case '<<':
                     if(this.currentpage !== 1){
                         $('button.currentpage').prev().click()
                     }
                     break
-                    case '下一页':
+                    case '>>':
                     $('button.currentpage').next().click()
                     break
                     case '首页':
@@ -62,10 +62,17 @@ export default {
 <style scoped>
     button{
         color: #777;
-        padding: 5px;
+        padding: 2px 10px;
+        line-height: 2em;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+    button:focus{
+        outline: none;
     }
     .currentpage{
-        background: #000;
+        color: #80bd01;
     }
 </style>
 
