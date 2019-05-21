@@ -10,25 +10,25 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      name:'root',
-      path:'/',
-      components:{
-        main:Postlist
+      name: 'root',
+      path: '/',
+      components: {
+        main: Postlist
       }
     },
     {
-      name:'post_content',
-      path:'/topic/id=:id&author=:name',
-      components:{
+      name: 'post_content',
+      path: '/topic/id=:id&author=:name',
+      components: {
         main: Article,
         slidebar: Slidebar
       }
     },
     {
-      name:'user_info',
-      path:'/userinfo/:name',
-      components:{
-        main:UserInfo
+      name: 'user_info',
+      path: '/userinfo/:name',
+      components: {
+        main: UserInfo
       }
     }
   ]

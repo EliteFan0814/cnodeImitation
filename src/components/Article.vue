@@ -25,7 +25,8 @@
             </div>
             <div class="reply">
                 <div class="reply_topbar">{{post.reply_count}} 回复</div>
-                <div v-for="(reply,index) in post.replies" :key="index" class="replySec">
+                <div v-if="post.reply_count !== 0">
+                    <div v-for="(reply,index) in post.replies" :key="index" class="replySec">
                     <div class="clearfix">
                         <router-link :to="{name:'user_info',params:{name:reply.author.loginname}}">
                             <img class="avatar" :src="reply.author.avatar_url">
@@ -38,6 +39,8 @@
                     </div>
                     <p class="reply_content" v-html="reply.content"></p>
                 </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -80,7 +83,14 @@ export default {
 
 <style>
     @import url('../assets/github-markdown.css');
-
+    .loading{
+        background-color: #fff;
+        width:100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .article{
         margin-top: 20px;
         background: #fff;

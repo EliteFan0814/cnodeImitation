@@ -3,7 +3,7 @@
         <div class="loading" v-if="isLoading">
             <img src="../assets/loading.gif">
         </div>
-        <div class="post" v-else>
+        <div v-else class="post">
             <ul>
                 <li>
                     <div class="topbar">
@@ -38,7 +38,7 @@
                     <span class="last_reply">{{post.last_reply_at | formatDate}}</span>
                 </li>
                 <li>
-                    <pagination @changeList="changeList"/>
+                    <pagination v-if="posts.length !== 0" @changeList="changeList"/>
                 </li>
             </ul>
         </div>
@@ -87,6 +87,17 @@ export default {
 </script>
 
 <style scoped>
+    .postlist{
+        margin-top: 20px;
+    }
+    .loading{
+        background-color: #fff;
+        width:100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     ul{
         list-style: none;
     }

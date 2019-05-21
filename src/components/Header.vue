@@ -2,12 +2,12 @@
     <div class="header">
         <router-link :to="{name:'root'}"><img src="../assets/cnodejs_light.svg"></router-link>
         <ul>
-            <li><a href="">首页</a></li>
-            <li><a href="">新手入门</a></li>
-            <li><a href="">API</a></li>
-            <li><a href="">关于</a></li>
-            <li><a href="">注册</a></li>
-            <li><a href="">登陆</a></li>
+            <li><router-link :to="{name:'root'}">首页</router-link></li>
+            <li><router-link :to="{name:'root'}">新手入门</router-link></li>
+            <li><router-link :to="{name:'root'}">API</router-link></li>
+            <li><router-link :to="{name:'root'}">关于</router-link></li>
+            <li><router-link :to="{name:'root'}">注册</router-link></li>
+            <li><router-link :to="{name:'root'}">登陆</router-link></li>
         </ul>
     </div>
 </template>

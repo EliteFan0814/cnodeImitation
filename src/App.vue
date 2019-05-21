@@ -4,9 +4,7 @@
     <div class="main">
       <router-view name="slidebar"></router-view>
       <router-view name="main"></router-view>
-      
     </div>
-    <!-- <router-view/> -->
   </div>
 </template>
 
@@ -25,16 +23,18 @@ export default {
     margin: 0;
     padding: 0;
   }
+  body{
+    padding-bottom: 15px;
+    background-color: #e1e1e1;
+  }
   .clearfix::after{
     content: "";
     display: block;
-    clear: both;
-  }
-  #app{
-    background-color: #e1e1e1
+    clear: both; 
   }
   .main{
     width: 90%;
     margin: 0 auto;
   }
+  
 </style>
