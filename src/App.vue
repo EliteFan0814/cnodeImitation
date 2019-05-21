@@ -9,32 +9,31 @@
 </template>
 
 <script>
-import headerComp from './components/Header'
+import headerComp from "./components/Header";
 export default {
-  name: 'App',
-  components:{
+  name: "App",
+  components: {
     headerComp
   }
-}
+};
 </script>
 
 <style>
-  *{
-    margin: 0;
-    padding: 0;
-  }
-  body{
-    padding-bottom: 15px;
-    background-color: #e1e1e1;
-  }
-  .clearfix::after{
-    content: "";
-    display: block;
-    clear: both; 
-  }
-  .main{
-    width: 90%;
-    margin: 0 auto;
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding-bottom: 15px;
+  background-color: #e1e1e1;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.main {
+  width: 90%;
+  margin: 0 auto;
+}
 </style>
