@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header clearfix">
     <router-link :to="{name:'root'}">
       <img src="../assets/cnodejs_light.svg">
     </router-link>
@@ -35,27 +35,33 @@ export default {
 <style scoped>
 .header {
   background-color: #444;
-  height: 50px;
+  padding: 11px 5%;
+}
+a{
+  display: block;
+  float: left;
 }
 img {
-  max-width: 120px;
-  margin-left: 50px;
-  margin-top: 10px;
+  display: block;
+  width: 120px;
 }
 ul {
   list-style: none;
   float: right;
-  padding: 15px;
 }
 ul li {
-  display: inline-block;
-  padding: 0 5px;
+  display: block;
+  float: left;
+  padding: 0 15px;
+}
+ul li:last-child{
+  padding-right: 0px;
 }
 a {
   text-decoration: none;
   color: #ccc;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 28px;
 }
 a:hover {
   color: #fff;

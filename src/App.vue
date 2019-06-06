@@ -34,6 +34,6 @@ body {
 }
 .main {
   width: 90%;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 </style>

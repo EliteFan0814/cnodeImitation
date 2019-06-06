@@ -94,9 +94,6 @@ export default {
 </script>
 
 <style scoped>
-.postlist {
-  margin-top: 20px;
-}
 .loading {
   background-color: #fff;
   width: 100%;

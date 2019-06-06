@@ -82,7 +82,7 @@ export default {
     this.getArticleData()
   },
   watch: {
-    $route(to, from) {
+    '$route'(to, from) {
       this.getArticleData()
     }
   }
